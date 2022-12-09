@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body x-data="{
+    imageAffichee: 'https://picsum.photos/id/237/400/300',
+}">
     <h1>Galerie</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius atque deserunt consectetur error, cum molestiae soluta, assumenda rem repudiandae reiciendis officia labore quasi harum similique quis inventore tempore ea? Officiis.</p>
     <div class="overlay">
-        <figure><img src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+        <figure><img :src="imageAffichee" src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
     </div>
 </body>
 </html>
