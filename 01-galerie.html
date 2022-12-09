@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body x-data="{
-    imageAffichee: 'https://picsum.photos/id/237/400/300',
+    imageAffichee: 'https://picsum.photos/id/237/200/300',
 }">
     <h1>Galerie</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius atque deserunt consectetur error, cum molestiae soluta, assumenda rem repudiandae reiciendis officia labore quasi harum similique quis inventore tempore ea? Officiis.</p>
-    <div class="overlay">
-        <figure><img :src="imageAffichee" src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+    <div class="overlay"
+    x-show="imageAffichee"
+    @click="imageAffichee = null">
+        <figure><img :src="imageAffichee" alt="image 237... un chiot"></figure>
     </div>
 </body>
 </html>
@@ -29,7 +32,7 @@
     background-color: rgba(0,0,0,0.9);/* Black background with opacity */
     cursor: pointer;/* Add a pointer on hover */
     display: grid;/* Use a grid for easy centering */
-    justify-content: center;/* Center vertically and horizontally */
+    place-content: center;/* Center vertically and horizontally */
 }
 .overlay::after {
     content: "X";/* Add content : "X" */
@@ -37,7 +40,7 @@
     background-color: #000;/* Black background color */
     font-family: sans-serif;/* Font family "sans-serif" */
     text-align: center;/* Centered text */
-    line-height: 100%;/* Line height ( idem height ) */
+    line-height: 2rem;/* Line height ( idem height ) */
     display: block;/* Display as a block */
     position: absolute;/* Position absolute */
     top: 1rem;/* 1rem from the top */
